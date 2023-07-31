@@ -36,7 +36,7 @@ dncui = "https://www.cornellsaprun.com/dncui/"
 VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
-VERSION_STR = "V1.4.0"
+VERSION_STR = "V1.5.0"
 ###############################################################################
 
 class NumericValidator(wx.Validator):
