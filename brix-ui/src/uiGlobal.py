@@ -7,6 +7,8 @@
 import wx
 import os
 
+import autoupdate
+
 
 IMG_ICON = "mcci_logo.ico"
 IMG_LOGO = "mcci_logo.png"
@@ -36,8 +38,33 @@ dncui = "https://www.cornellsaprun.com/dncui/"
 VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
-VERSION_STR = "V1.3.0"
+VERSION_STR = "V1.2.0"
 ###############################################################################
+
+def check_version():
+    app = wx.App(False)
+    print("new version avaliblle")
+    repo_owner = "vinaynmcci"
+    repo_name = "autoupdate"
+    access_token = "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"
+    latest_version = autoupdate.check_for_update(repo_owner, repo_name, access_token)
+
+    dlg = wx.Dialog(None, title="Cricket UI")
+    update_info = wx.StaticText(dlg, label="You are using the latest version.", style=wx.ALIGN_CENTER)
+
+    if latest_version:
+        if latest_version > VERSION_STR:
+            update_info.SetLabel(f"A new version ({latest_version}) is available! Click OK to update.")
+            
+        else:
+            update_info.SetLabel("You are using the latest version.")
+    
+    dlg.SetSize(300, 150)
+    dlg.ShowModal()
+    dlg.Destroy()
+    app.MainLoop()
+check_version()
+
 
 class NumericValidator(wx.Validator):
     
@@ -72,6 +99,7 @@ class NumericValidator(wx.Validator):
         elif (chr(key).isdigit() or chr(key) == "."):
             evt.Skip()
             return
+
 
         
         
