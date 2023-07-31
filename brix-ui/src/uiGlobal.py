@@ -36,7 +36,7 @@ dncui = "https://www.cornellsaprun.com/dncui/"
 VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
-VERSION_STR = "V1.2.0"
+VERSION_STR = "V1.3.0"
 ###############################################################################
 
 class NumericValidator(wx.Validator):
@@ -47,6 +47,7 @@ class NumericValidator(wx.Validator):
         self.Bind(wx.EVT_CHAR, self.OnChar)
 
     def Clone(self, arg=None):
+        print("Numarical validator")
        
         return NumericValidator()
    
