@@ -42,7 +42,7 @@ class TestPanel(wx.Frame):
         wx.Frame.__init__(self,None, size=(530,620))
 
         self.SetBackgroundColour("White")
-        self.SetTitle('MCCI Brix UI - Version 1.2.0')
+        self.SetTitle('MCCI Brix UI')
 
         self.listview = []
         self.token = None
