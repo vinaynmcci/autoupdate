@@ -38,27 +38,28 @@ dncui = "https://www.cornellsaprun.com/dncui/"
 VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
-VERSION_STR = "V2.4.0"
+VERSION_STR = "v3.0.0"
 ###############################################################################
 
 def check_version():
     app = wx.App(False)
-    print("new version avaliblle")
+   
     repo_owner = "vinaynmcci"
     repo_name = "autoupdate"
     access_token = "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"
     latest_version = autoupdate.check_for_update(repo_owner, repo_name, access_token)
-    print("latest version:", latest_version)
 
     dlg = wx.Dialog(None, title="Cricket UI")
     update_info = wx.StaticText(dlg, label="You are using the latest version.", style=wx.ALIGN_CENTER)
 
     if latest_version:
         if latest_version > VERSION_STR:
-            update_info.SetLabel(f"A new version ({latest_version}) is available! Click OK to update.")
+            # update_info.SetLabel(f"A new version ({latest_version}) is available! Click OK to update.")
+            update_info.SetLabel("You are using the latest version.")
             
         else:
-            update_info.SetLabel("You are using the latest version.")
+            # update_info.SetLabel("You are using the latest version.")
+            update_info.SetLabel(f"A new version ({latest_version}) is available! Click OK to update.")
     
     dlg.SetSize(300, 150)
     dlg.ShowModal()

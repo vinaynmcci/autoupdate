@@ -18,6 +18,7 @@ class AboutWindow(wx.Window):
                            name="About")
 
         self.top = top
+        self.a = None
 
         bmp = wx.Image("./icons/mcci_logo_about.png").ConvertToBitmap()
         self.image = wx.StaticBitmap(self, ID_ABOUT_IMAGE, bmp,
