@@ -38,7 +38,7 @@ dncui = "https://www.cornellsaprun.com/dncui/"
 VERSION_NAME  = "\nMCCI"+u"\u00AE"+" Brix UI"
 VERSION_ID    = ""
 VERSION_COPY  = "\nCopyright "+u"\u00A9"+" 2022 MCCI Corporation"
-VERSION_STR = "v3.1.0"
+VERSION_STR = "v4.0.0"
 ###############################################################################
 
 def check_version():
@@ -54,12 +54,12 @@ def check_version():
 
     if latest_version:
         if latest_version > VERSION_STR:
-            # update_info.SetLabel(f"A new version ({latest_version}) is available! Click OK to update.")
-            update_info.SetLabel("You are using the latest version.")
+            update_info.SetLabel(f"A new version ({latest_version}) is available! Click OK to update.")
+            # update_info.SetLabel("You are using the latest version.")
             
         else:
-            # update_info.SetLabel("You are using the latest version.")
-            update_info.SetLabel(f"A new version ({latest_version}) is available! Click OK to update.")
+            update_info.SetLabel("You are using the latest version.")
+            # update_info.SetLabel(f"A new version ({latest_version}) is available! Click OK to update.")
     
     dlg.SetSize(300, 150)
     dlg.ShowModal()
