@@ -19,6 +19,6 @@ def check_for_update(repo_owner, repo_name, access_token):
 if __name__ == "__main__":
     repo_owner = "vinaynmcci"
     repo_name = "autoupdate"
-    access_token = "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"
+    access_token = "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"
     latest_version = check_for_update(repo_owner, repo_name, access_token)
     print(latest_version)
